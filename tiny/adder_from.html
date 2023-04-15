@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adder Form</title>
+    <script>
+      function handleSubmit(event) {
+        event.preventDefault();
+        const number1 = document.getElementById("number1").value;
+        const number2 = document.getElementById("number2").value;
+        const queryString = `?${number1}&${number2}`;
+        window.location.href = `/cgi-bin/adder${queryString}`;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Welcome to the Adder Form</h1>
+    <form onsubmit="handleSubmit(event)">
+      <label>Number 1:</label>
+      <input type="text" id="number1" name="number1" />
+      <br />
+      <label>Number 2:</label>
+      <input type="text" id="number2" name="number2" />
+      <br />
+      <input type="submit" value="Add Numbers" />
+    </form>
+  </body>
+</html>
